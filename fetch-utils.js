@@ -1,5 +1,5 @@
-const SUPABASE_URL = '';
-const SUPABASE_KEY = '';
+const SUPABASE_URL = 'https://fjaehedvvvybjlsfvqgr.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZqYWVoZWR2dnZ5Ympsc2Z2cWdyIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjA2MDg0ODUsImV4cCI6MTk3NjE4NDQ4NX0.dsN_ILXjZ95_XQNLlQmEOYG7ESTTWsf3gGjyev7SX-I';
 
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
@@ -43,3 +43,14 @@ export async function signOutUser() {
 }
 
 /* Data functions */
+export async function createEvent(event) {
+    const response = await client.from('events').insert(event);
+
+    return response.data;
+}
+
+export async function getEvents() {
+    const response = await client.from('events').select('*');
+
+    return response.data;
+}

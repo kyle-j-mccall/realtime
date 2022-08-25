@@ -32,6 +32,11 @@ body {
     font-weight: 800;
 }
 
+main {
+    margin: 50px;
+    background-color:rgb(75, 102, 98)
+}
+
 .page-header nav {
     flex-grow: 2;
     display: flex;
