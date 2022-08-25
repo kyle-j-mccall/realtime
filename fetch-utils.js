@@ -46,11 +46,33 @@ export async function signOutUser() {
 export async function createEvent(event) {
     const response = await client.from('events').insert(event);
 
-    return response.data;
+    return checkError(response);
 }
 
 export async function getEvents() {
     const response = await client.from('events').select('*');
 
     return response.data;
+}
+
+export async function uploadEventImage(imageName, imgaeFile) {
+    const bucket = await client.storage.from('event-image');
+
+    const { data, error } = await bucket.upload(imageName, imageFile,
+        {
+            cacheControl: '3600',
+            upsert: true,
+        });
+    
+        if (error) {
+            console.log(error);
+            return null;
+        }
+
+        const url = `${SUPABASE_URL}/storage/v1/object/public/${data.Key}`
+}
+
+function checkError({ data, error }) {
+    // eslint-disable-next-line no-console
+    return error ? console.error(error) : data;
 }

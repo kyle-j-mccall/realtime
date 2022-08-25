@@ -20,6 +20,12 @@ label {
     gap: 5px;
 }
 
+#img-preview {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+}
+
 label div {
     font-family: 'Titillium Web';
     font-size: 0.9em;
