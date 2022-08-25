@@ -55,7 +55,7 @@ export async function getEvents() {
     return response.data;
 }
 
-export async function uploadEventImage(imageName, imgaeFile) {
+export async function uploadEventImage(imageName, imageFile) {
     const bucket = await client.storage.from('event-image');
 
     const { data, error } = await bucket.upload(imageName, imageFile,
