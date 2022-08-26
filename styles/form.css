@@ -10,9 +10,20 @@ form {
     gap: 20px;
 }
 
+main {
+    margin: 0;
+    
+}
+
 label {
     display: grid;
     gap: 5px;
+}
+
+#img-preview {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
 }
 
 label div {
