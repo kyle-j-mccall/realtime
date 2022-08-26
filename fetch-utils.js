@@ -64,12 +64,14 @@ export async function uploadEventImage(imageName, imageFile) {
             upsert: true,
         });
     
-        if (error) {
-            console.log(error);
-            return null;
-        }
+    if (error) {
+        return null;
+    }
 
-        const url = `${SUPABASE_URL}/storage/v1/object/public/${data.Key}`
+    const url = `${SUPABASE_URL}/storage/v1/object/public/${data.Key}`;
+    console.log(url);
+    return url;
+
 }
 
 function checkError({ data, error }) {

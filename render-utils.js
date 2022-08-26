@@ -8,7 +8,7 @@ export function renderEvent(event) {
 
 
     nameEl.textContent = event.name;
-    img.src = event.img;
+    img.src = event.image;
     locationEl.textContent = event.location;
     addButton.textContent = 'Add comment';
 
