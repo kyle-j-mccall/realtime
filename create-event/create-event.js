@@ -19,9 +19,7 @@ form.addEventListener('submit', async (e) => {
 
     if (imageFile.size) {
         const imageName = `${user.id}/${imageFile.name}`;
-        url = await uploadEventImage(imageName, imageFile);
-        console.log(imageName);
-        console.log(url);
+        url = await uploadEventImage(imageName, imageFile);        
     }
     
 
@@ -57,4 +55,4 @@ form.addEventListener('submit', async (e) => {
 imageInput.addEventListener('change', () => {
     const file = imageInput.files[0];
     imagePreview.src = URL.createObjectURL(file);
-})
+});

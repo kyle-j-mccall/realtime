@@ -69,7 +69,6 @@ export async function uploadEventImage(imageName, imageFile) {
     }
 
     const url = `${SUPABASE_URL}/storage/v1/object/public/${data.Key}`;
-    console.log(url);
     return url;
 
 }
